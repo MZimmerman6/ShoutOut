@@ -27,5 +27,7 @@
 #define ipAddress @"52.6.123.241"
 #define portNumber @"1337"
 
+#define recordingTimeLimit 5
+
 
 #endif

@@ -14,9 +14,14 @@
 @property (strong, nonatomic) NSURL *videoURL;
 @property (strong, nonatomic) NSString *videoID;
 @property (strong, nonatomic) NSString *userID;
+@property (strong, nonatomic) NSString *videoTitle;
 
 
--(id) initWithVideoID:(NSString*)videoIDIn userID:(NSString*)userIDIn eventID:(NSString*)eventIDIn andURL:(NSURL*)urlIn;
+-(id) initWithVideoID:(NSString *)videoIDIn
+               userID:(NSString *)userIDIn
+              eventID:(NSString *)eventIDIn
+                title:(NSString*)titleIn
+               andURL:(NSURL *)urlIn;
 
 -(void) setURLWithString:(NSString*)urlStringIn;
 

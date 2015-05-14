@@ -13,4 +13,11 @@
 
 -(NSMutableURLRequest*) generateRequstWithData:(NSData*)dataIn userId:(NSString*)userIn eventId:(NSString*)eventIn;
 
++(NSMutableURLRequest*) generateRequstWithData:(NSData*)dataIn
+                                        userId:(NSString*)userIn
+                                       eventId:(NSString*)eventIn
+                                       andName:(NSString*)nameIn;
+
+
+
 @end

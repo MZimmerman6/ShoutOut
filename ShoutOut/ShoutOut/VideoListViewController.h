@@ -14,14 +14,19 @@
     NSURLConnection *videoConnection;
     NSMutableArray *userList;
     
-    NSArray *urlList;
+    NSMutableArray *videoList;
+    
+    NSMutableURLRequest *videoRequest;
     
     
 }
 
+@property (strong, nonatomic) NSString *shortTitle;
 
 @property (strong, nonatomic) IBOutlet UITableView *videoTable;
 
 -(IBAction)backPressed:(id)sender;
+
+-(void) setURLRequest:(NSMutableURLRequest*)requestIn;
 
 @end

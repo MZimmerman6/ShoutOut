@@ -31,7 +31,6 @@
     
     [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
     
-    
     // Override point for customization after application launch.
     return YES;
 }

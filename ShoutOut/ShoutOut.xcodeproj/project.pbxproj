@@ -19,6 +19,12 @@
 		44F4B3001B04CBED002AB8B9 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F4B2FF1B04CBED002AB8B9 /* Event.m */; };
 		44F4B3031B04CE44002AB8B9 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F4B3021B04CE44002AB8B9 /* Video.m */; };
 		44F4B3061B04D1A9002AB8B9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F4B3051B04D1A9002AB8B9 /* User.m */; };
+		44F4B30A1B04E783002AB8B9 /* EventListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F4B3081B04E783002AB8B9 /* EventListViewController.m */; };
+		44F4B30B1B04E783002AB8B9 /* EventListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44F4B3091B04E783002AB8B9 /* EventListViewController.xib */; };
+		44F4B3101B04E9CA002AB8B9 /* EventListRequestCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F4B30F1B04E9CA002AB8B9 /* EventListRequestCreator.m */; };
+		44F4B3131B04F3CF002AB8B9 /* VideoListRequestCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F4B3121B04F3CF002AB8B9 /* VideoListRequestCreator.m */; };
+		44F4B3161B050A13002AB8B9 /* red_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 44F4B3141B050A13002AB8B9 /* red_circle.png */; };
+		44F4B3171B050A13002AB8B9 /* white_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 44F4B3151B050A13002AB8B9 /* white_circle.png */; };
 		44F6DAFE1AED463700327A69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F6DAFD1AED463700327A69 /* main.m */; };
 		44F6DB011AED463700327A69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F6DB001AED463700327A69 /* AppDelegate.m */; };
 		44F6DB041AED463700327A69 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F6DB031AED463700327A69 /* ViewController.m */; };
@@ -66,6 +72,15 @@
 		44F4B3021B04CE44002AB8B9 /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
 		44F4B3041B04D1A9002AB8B9 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		44F4B3051B04D1A9002AB8B9 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		44F4B3071B04E783002AB8B9 /* EventListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListViewController.h; sourceTree = "<group>"; };
+		44F4B3081B04E783002AB8B9 /* EventListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListViewController.m; sourceTree = "<group>"; };
+		44F4B3091B04E783002AB8B9 /* EventListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventListViewController.xib; sourceTree = "<group>"; };
+		44F4B30E1B04E9CA002AB8B9 /* EventListRequestCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListRequestCreator.h; sourceTree = "<group>"; };
+		44F4B30F1B04E9CA002AB8B9 /* EventListRequestCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListRequestCreator.m; sourceTree = "<group>"; };
+		44F4B3111B04F3CF002AB8B9 /* VideoListRequestCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListRequestCreator.h; sourceTree = "<group>"; };
+		44F4B3121B04F3CF002AB8B9 /* VideoListRequestCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListRequestCreator.m; sourceTree = "<group>"; };
+		44F4B3141B050A13002AB8B9 /* red_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_circle.png; path = ../../red_circle.png; sourceTree = "<group>"; };
+		44F4B3151B050A13002AB8B9 /* white_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white_circle.png; path = ../../white_circle.png; sourceTree = "<group>"; };
 		44F6DAF81AED463700327A69 /* ShoutOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoutOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F6DAFC1AED463700327A69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44F6DAFD1AED463700327A69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -107,23 +122,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		44A0358B1AF24EED006FB64D /* Custom Objects */ = {
+		44A0358B1AF24EED006FB64D /* Custom Stuff */ = {
 			isa = PBXGroup;
 			children = (
-				44A0358C1AF24F41006FB64D /* VideoRequestCreator.h */,
-				44A0358D1AF24F41006FB64D /* VideoRequestCreator.m */,
-				44B7685A1AF40EFA00DF0504 /* PushRequestCreator.h */,
-				44B7685B1AF40EFA00DF0504 /* PushRequestCreator.m */,
-				44EC9FE71AF70AC700FF9FB4 /* UserListRequestCreator.h */,
-				44EC9FE81AF70AC700FF9FB4 /* UserListRequestCreator.m */,
-				44F4B2FE1B04CBED002AB8B9 /* Event.h */,
-				44F4B2FF1B04CBED002AB8B9 /* Event.m */,
-				44F4B3011B04CE44002AB8B9 /* Video.h */,
-				44F4B3021B04CE44002AB8B9 /* Video.m */,
-				44F4B3041B04D1A9002AB8B9 /* User.h */,
-				44F4B3051B04D1A9002AB8B9 /* User.m */,
+				44F4B30D1B04E9A1002AB8B9 /* Objects */,
+				44F4B30C1B04E98F002AB8B9 /* Requests */,
 			);
-			name = "Custom Objects";
+			name = "Custom Stuff";
 			sourceTree = "<group>";
 		};
 		44EC9FE11AF6F8D700FF9FB4 /* Audio */ = {
@@ -132,6 +137,36 @@
 				44B7685D1AF418B000DF0504 /* sub.caf */,
 			);
 			name = Audio;
+			sourceTree = "<group>";
+		};
+		44F4B30C1B04E98F002AB8B9 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				44A0358C1AF24F41006FB64D /* VideoRequestCreator.h */,
+				44A0358D1AF24F41006FB64D /* VideoRequestCreator.m */,
+				44B7685A1AF40EFA00DF0504 /* PushRequestCreator.h */,
+				44B7685B1AF40EFA00DF0504 /* PushRequestCreator.m */,
+				44EC9FE71AF70AC700FF9FB4 /* UserListRequestCreator.h */,
+				44EC9FE81AF70AC700FF9FB4 /* UserListRequestCreator.m */,
+				44F4B30E1B04E9CA002AB8B9 /* EventListRequestCreator.h */,
+				44F4B30F1B04E9CA002AB8B9 /* EventListRequestCreator.m */,
+				44F4B3111B04F3CF002AB8B9 /* VideoListRequestCreator.h */,
+				44F4B3121B04F3CF002AB8B9 /* VideoListRequestCreator.m */,
+			);
+			name = Requests;
+			sourceTree = "<group>";
+		};
+		44F4B30D1B04E9A1002AB8B9 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				44F4B2FE1B04CBED002AB8B9 /* Event.h */,
+				44F4B2FF1B04CBED002AB8B9 /* Event.m */,
+				44F4B3011B04CE44002AB8B9 /* Video.h */,
+				44F4B3021B04CE44002AB8B9 /* Video.m */,
+				44F4B3041B04D1A9002AB8B9 /* User.h */,
+				44F4B3051B04D1A9002AB8B9 /* User.m */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 		44F6DAEF1AED463700327A69 = {
@@ -156,16 +191,18 @@
 		44F6DAFA1AED463700327A69 /* ShoutOut */ = {
 			isa = PBXGroup;
 			children = (
-				44A0358B1AF24EED006FB64D /* Custom Objects */,
+				44A0358B1AF24EED006FB64D /* Custom Stuff */,
 				44F6DAFF1AED463700327A69 /* AppDelegate.h */,
 				44F6DB001AED463700327A69 /* AppDelegate.m */,
 				44F6DB021AED463700327A69 /* ViewController.h */,
 				44F6DB031AED463700327A69 /* ViewController.m */,
 				44F6DB211AED46C400327A69 /* ViewController.xib */,
-				44F6DB0A1AED463700327A69 /* LaunchScreen.xib */,
 				44EC9FE21AF7005800FF9FB4 /* VideoListViewController.h */,
 				44EC9FE31AF7005800FF9FB4 /* VideoListViewController.m */,
 				44EC9FE51AF7008E00FF9FB4 /* VideoListViewController.xib */,
+				44F4B3071B04E783002AB8B9 /* EventListViewController.h */,
+				44F4B3081B04E783002AB8B9 /* EventListViewController.m */,
+				44F4B3091B04E783002AB8B9 /* EventListViewController.xib */,
 				44F6DAFB1AED463700327A69 /* Supporting Files */,
 			);
 			path = ShoutOut;
@@ -174,6 +211,7 @@
 		44F6DAFB1AED463700327A69 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				44F6DB0A1AED463700327A69 /* LaunchScreen.xib */,
 				44EC9FE11AF6F8D700FF9FB4 /* Audio */,
 				44F6DB231AED46D800327A69 /* images */,
 				4447E5621AF1C44400199170 /* Definitions.h */,
@@ -203,6 +241,8 @@
 		44F6DB231AED46D800327A69 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				44F4B3141B050A13002AB8B9 /* red_circle.png */,
+				44F4B3151B050A13002AB8B9 /* white_circle.png */,
 				44F6DB081AED463700327A69 /* Images.xcassets */,
 				44B768631AF44FAD00DF0504 /* launch_image.png */,
 				44B768601AF44EF900DF0504 /* launch_image1_2.png */,
@@ -301,7 +341,9 @@
 				44EC9FE61AF7008E00FF9FB4 /* VideoListViewController.xib in Resources */,
 				44F6DB2F1AED46FE00327A69 /* hd-selected.png in Resources */,
 				44B768641AF44FAD00DF0504 /* launch_image.png in Resources */,
+				44F4B30B1B04E783002AB8B9 /* EventListViewController.xib in Resources */,
 				44B7685E1AF418B000DF0504 /* sub.caf in Resources */,
+				44F4B3171B050A13002AB8B9 /* white_circle.png in Resources */,
 				44F6DB2B1AED46FE00327A69 /* camera-toggle-pressed.png in Resources */,
 				44B768621AF44EF900DF0504 /* launch_image1_2.png in Resources */,
 				44F6DB2D1AED46FE00327A69 /* flash-off.png in Resources */,
@@ -310,6 +352,7 @@
 				44F6DB221AED46C400327A69 /* ViewController.xib in Resources */,
 				44F6DB301AED46FE00327A69 /* record-indicator.png in Resources */,
 				44F6DB2C1AED46FE00327A69 /* camera-toggle.png in Resources */,
+				44F4B3161B050A13002AB8B9 /* red_circle.png in Resources */,
 				44F6DB091AED463700327A69 /* Images.xcassets in Resources */,
 				44F6DB2E1AED46FE00327A69 /* flash-on.png in Resources */,
 			);
@@ -331,6 +374,7 @@
 			files = (
 				44F4B3061B04D1A9002AB8B9 /* User.m in Sources */,
 				44EC9FE91AF70AC700FF9FB4 /* UserListRequestCreator.m in Sources */,
+				44F4B30A1B04E783002AB8B9 /* EventListViewController.m in Sources */,
 				44A0358E1AF24F41006FB64D /* VideoRequestCreator.m in Sources */,
 				44B7685C1AF40EFA00DF0504 /* PushRequestCreator.m in Sources */,
 				44F4B3031B04CE44002AB8B9 /* Video.m in Sources */,
@@ -338,7 +382,9 @@
 				44F4B3001B04CBED002AB8B9 /* Event.m in Sources */,
 				44F6DB011AED463700327A69 /* AppDelegate.m in Sources */,
 				44EC9FE41AF7005800FF9FB4 /* VideoListViewController.m in Sources */,
+				44F4B3131B04F3CF002AB8B9 /* VideoListRequestCreator.m in Sources */,
 				44F6DAFE1AED463700327A69 /* main.m in Sources */,
+				44F4B3101B04E9CA002AB8B9 /* EventListRequestCreator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

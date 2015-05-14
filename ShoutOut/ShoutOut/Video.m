@@ -13,7 +13,11 @@
 @synthesize videoID, eventID, userID,videoURL;
 
 
--(id) initWithVideoID:(NSString *)videoIDIn userID:(NSString *)userIDIn eventID:(NSString *)eventIDIn andURL:(NSURL *)urlIn {
+-(id) initWithVideoID:(NSString *)videoIDIn
+               userID:(NSString *)userIDIn
+              eventID:(NSString *)eventIDIn
+                title:(NSString*)titleIn
+               andURL:(NSURL *)urlIn {
     if (!self) {
         self = [super init];
     }
@@ -22,7 +26,7 @@
     [self setEventID:eventIDIn];
     [self setVideoID:videoIDIn];
     [self setVideoURL:urlIn];
-    
+    [self setVideoTitle:titleIn];
     return self;
 }
 

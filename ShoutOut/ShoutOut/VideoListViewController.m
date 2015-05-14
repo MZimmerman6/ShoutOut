@@ -9,16 +9,17 @@
 #import "VideoListViewController.h"
 #import "UserListRequestCreator.h"
 #import <MediaPlayer/MediaPlayer.h>
+#import "Video.h"
 
 @implementation VideoListViewController
 
-@synthesize videoTable;
+@synthesize videoTable,shortTitle;
 
 -(void) viewDidLoad {
     
     [videoTable setDataSource:self];
     [videoTable setDelegate:self];
-    urlList = [[NSMutableArray alloc] init];
+    videoList = [[NSMutableArray alloc] init];
 
     
 }
@@ -30,36 +31,41 @@
 
 -(void) viewWillAppear:(BOOL)animated {
 
+    videoListData =[[NSMutableData alloc] init];
+    videoConnection  = [[NSURLConnection alloc] initWithRequest:videoRequest delegate:self startImmediately:YES];
     
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    urlList = [[NSMutableArray alloc] initWithArray:[prefs arrayForKey:@"video_urls"]];
-    
-    NSLog(@"%lu",(unsigned long)[urlList count]);
-    
-//    videoListData =[[NSMutableData alloc] init];
-//    NSURLRequest *req = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://52.6.123.241:1337/user"]
-//                                              cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
-//                                          timeoutInterval:5];
-//    videoConnection  = [[NSURLConnection alloc] initWithRequest:req delegate:self startImmediately:YES];
-    
+}
+
+-(void) setURLRequest:(NSMutableURLRequest *)requestIn {
+    videoRequest = requestIn;
 }
 
 
 -(void) connectionDidFinishLoading:(NSURLConnection *)connection {
-//    NSLog(@"Connection Finished");
-//    NSError *error;
-//    NSArray *temp = [NSJSONSerialization JSONObjectWithData:videoListData options:0 error:&error];
-//    NSString *userId;
-//    
-//    NSLog(@"%lu",(unsigned long)[temp count]);
-//    for (int i = 0;i<[temp count];i++) {
-//        NSDictionary *dict = [temp objectAtIndex:i];
-//        
-//         userId = [dict objectForKey:@"userid"];
-//        if (userId != nil) {
-//            [urlList addObject:userId];
-//        }
-//    }
+    
+    NSLog(@"Got Video List");
+    NSError *error;
+    NSArray *videoArray = [NSJSONSerialization JSONObjectWithData:videoListData options:0 error:&error];
+    NSDictionary *videoDict = [videoArray objectAtIndex:0];
+    videoArray = [videoDict objectForKey:@"videos"];
+    
+    Video *tempVid;
+    videoList = [[NSMutableArray alloc] init];
+    
+    for (int j = 0; j < [videoArray count]; j++) {
+        tempVid = [[Video alloc] init];
+        
+        NSDictionary *videoDict = [videoArray objectAtIndex:j];
+        
+        [tempVid setURLWithString:[videoDict objectForKey:@"url"]];
+        [tempVid setEventID:[videoDict objectForKey:@"eventid"]];
+        [tempVid setUserID:[videoDict objectForKey:@"userid"]];
+        [tempVid setVideoID:[videoDict objectForKey:@"id"]];
+        [videoList addObject:tempVid];
+    }
+    
+    [videoTable reloadData];
+    
 }
 
 
@@ -75,7 +81,7 @@
 
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [urlList count];
+    return [videoList count];
 }
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -83,16 +89,19 @@
 
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+
     static NSString *identifier = @"VideoTableCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (cell == nil)
     {
+        
+        Video *temp = [videoList objectAtIndex:indexPath.row];
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                       reuseIdentifier:identifier];
         
         cell.frame = CGRectMake(0, 0, videoTable.frame.size.width, 44);
-        cell.textLabel.text = [urlList objectAtIndex:indexPath.row];
+        cell.textLabel.text = temp.videoURL.description;
         
     }
     
@@ -103,21 +112,27 @@
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSString *url = [urlList objectAtIndex:indexPath.row];
+    Video *chosenVideo = [videoList objectAtIndex:indexPath.row];
+    NSURL *url = [chosenVideo videoURL];
     
     
-    MPMoviePlayerViewController * controller = [[MPMoviePlayerViewController alloc]initWithContentURL:[NSURL URLWithString:url]];
+    MPMoviePlayerViewController * controller = [[MPMoviePlayerViewController alloc] initWithContentURL:url];
     [controller.moviePlayer prepareToPlay];
     [controller.moviePlayer play];
     
-    // and present it
     [self presentMoviePlayerViewControllerAnimated:controller];
     
     
 }
 
 -(IBAction) backPressed:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    
+    [UIView animateWithDuration:0.5
+                     animations:^{
+                         [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+                         [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.navigationController.view cache:NO];
+                     }];
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 @end
